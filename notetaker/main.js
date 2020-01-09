@@ -1,10 +1,5 @@
 define([
-    'base/js/namespace',
-    // 'require',
-    // 'base/js/events',
-    // 'services/config',
-    // 'notebook/js/codecell'
-    // , events, configmod, codecell
+    'base/js/namespace'
 ], function (Jupyter) {
     "use strict";
 
@@ -24,7 +19,7 @@ define([
       const id = data.cell.cell_id;
       const idx = Jupyter.notebook.find_cell_index(data.cell);
       const time = new Date();
-      const type = "exec";
+      const type = "execution";
       addLogEntry({
         type,
         code,
@@ -46,14 +41,11 @@ define([
     });
 
     function load_ipython_extension() {
-        console.log(
-            'This is the current notebook application instance:',
-            Jupyter.notebook
-        );
+      console.log('Notetaking starting now!');
     }
 
     return {
-        load_ipython_extension: load_ipython_extension
+      load_ipython_extension: load_ipython_extension
     };
 
  });
