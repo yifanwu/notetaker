@@ -4,12 +4,14 @@ Logs all the execution of a notebook and stores the log in the notebook metadata
 
 ## Installation
 
+Please navigate into the root of the directory
+
 ```bash
 jupyter nbextension install notetaker --user
 jupyter nbextension enable notetaker/main
 ```
 
-If you have installed successfully, then you should be able to see the 🧽 and ⏸ buttons in the menubar.
+If you have installed successfully, then you should be able to see the 🧽 and ⏸ buttons in the menubar in your Jupyter Notebook instance.
 
 ## Log Format
 
