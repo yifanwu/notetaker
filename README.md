@@ -1,8 +1,15 @@
 # Notetaker
 
-Logs all the execution of a notebook and stores the log in the notebook metadata.
+Logs all the execution of a notebook and stores the log in the notebook metadata. When you open the `.ipynb` file, it will be an array of objects under `.metadata.history`, and you can also access it via `Jupyter.notebook.metadata.history` in the console.
 
-When you open the `.ipynb` file, it will be an array of objects under `.metadata.history`
+## Installation
+
+```bash
+jupyter nbextension install notetaker --user
+jupyter nbextension enable notetaker/main
+```
+
+If you have installed successfully, then you should be able to see the 🧽 and ⏸ buttons in the menubar.
 
 ## Log Format
 
@@ -21,16 +28,9 @@ When a cell has finished executing, the entry of type `completion` is appended t
 - `type`, which is `"completion"`
 - `time`, the time when the cell finished running. Note that even if the cell crashes with error, this event is still called. Some cells can miss the corresponding "completion" log entry if the kernel hangs.
 
-## Installation
+## Dev Notes
 
-If you are using this, just run the following:
-
-```bash
-jupyter nbextension install notetaker
-jupyter nbextension enable notetaker/main
-```
-
-If however, you are **developing** this extension and are making changes, then run the following
+If you are **developing** this extension and are making changes, then install via the following
 
 ```bash
 jupyter nbextension install --symlink notetaker
