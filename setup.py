@@ -50,11 +50,9 @@ def version(path):
     raise RuntimeError("Unable to find version string.")
 
 
-VERSION = version('midas/__init__.py')
-
 
 setup(name=NAME,
-      version=VERSION,
+      version="0.0.1",
       description=DESCRIPTION,
       long_description=LONG_DESCRIPTION,
       author=AUTHOR,
