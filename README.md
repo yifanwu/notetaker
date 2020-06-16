@@ -7,11 +7,12 @@ Logs all the execution of a notebook and stores the log in the notebook metadata
 Please navigate into the root of the directory
 
 ```bash
-jupyter nbextension install notetaker --user
-jupyter nbextension enable notetaker/main
+pip install notetaker
+jupyter nbextension install --user --py notetaker
+jupyter nbextension enable --user --py notetaker
 ```
 
-If you have installed successfully, then you should be able to see the 🧽 and ⏸ buttons in the menubar in your Jupyter Notebook instance.
+This installs it for the current user. You can use --system to install it systemwide (needs root) too.
 
 ## Log Format
 
