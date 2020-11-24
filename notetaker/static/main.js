@@ -23,7 +23,9 @@ define([
   
   
       Jupyter.notebook.events.on("execute.CodeCell", function(evt, data) {
-        const code = data.cell.get_text();
+        // remove non utf-8 compatible chars
+        // based on https://stackoverflow.com/questions/2670037/how-to-remove-invalid-utf-8-characters-from-a-javascript-string
+        const code = cleanString(data.cell.get_text());
         // get cell id
         const id = data.cell.cell_id;
         const idx = Jupyter.notebook.find_cell_index(data.cell);
@@ -48,6 +50,17 @@ define([
           time
         });
       });
+    }
+
+    // helper function
+    function cleanString(input) {
+      var output = "";
+      for (var i=0; i<input.length; i++) {
+        if (input.charCodeAt(i) <= 127) {
+          output += input.charAt(i);
+        }
+      }
+      return output;
     }
 
     return {
