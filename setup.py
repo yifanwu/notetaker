@@ -3,7 +3,7 @@ from glob import glob
 
 setuptools.setup(
     name='notetaker',
-    version='0.0.5',
+    version='0.0.6',
     url="https://github.com/yifanwu/notetaker",
     author="Yifan Wu",
     description="Jupyter Notebook extension to record history",
